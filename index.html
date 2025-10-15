@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
-<title>Aedes — OSM + Satélite</title>
+<title>Monitoreo Aedes Aegypti temporada 2024/2025</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -110,15 +110,12 @@ const baseArg = L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.
   maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map); 
                                     
-const baseOSM = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
 
 const baseSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   maxZoom: 19, attribution: 'Tiles &copy; Esri — World Imagery'
 });
 
-const baseMaps = {"OpenStreetMap": baseOSM, "Satélite (Esri World Imagery)": baseSat};
+const baseMaps = {"Argenmap": baseArg, "Satélite (Esri World Imagery)": baseSat};
 
 // Capas dinámicas y control
 const layerIPO = L.layerGroup();
